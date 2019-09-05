@@ -1,0 +1,48 @@
+.auth {
+    margin-top: 12%;
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 15px;
+    background-color: black
+}
+
+.auth-left{
+    
+    color: #fff;
+}
+
+
+
+.btn-register{
+    background: #0062cc;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.btn-register:hover{
+    background: #fff;
+    color: #0062cc;
+    border: 1px solid #0062cc
+}
+
+.tab-auth{
+    background: black;
+    color:white;
+    border-radius: 15px;
+    width: 50%;
+    margin: auto;
+}
+
+.tab-auth div:hover{
+    cursor: pointer;
+}
+
+.active-auth{
+    background:darkslategray;
+    border-radius: 15px;
+    color: #fff;
+    padding: 5px;
+}
