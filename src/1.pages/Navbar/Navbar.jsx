@@ -2,7 +2,22 @@ import React, { Component } from 'react';
 import Logo from '../Gambar/logopersipura.png'
 import Sapersipura from '../Gambar/sapersipura.png'
 import "./Navbar.css"
-import { MDBContainer, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBIcon,MDBView ,MDBMask} from 'mdbreact';
+import { 
+    MDBContainer, 
+    MDBNavbar, 
+    MDBNavbarBrand, 
+    MDBNavbarNav, 
+    MDBDropdownToggle,
+    MDBDropdownItem,
+    MDBDropdownMenu,
+    MDBNavbarToggler, 
+    MDBCollapse, 
+    MDBNavItem, 
+    MDBNavLink, 
+    MDBIcon,
+    MDBView ,
+    MDBMask,
+    MDBDropdown} from 'mdbreact';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import Cookie from 'universal-cookie'
@@ -30,7 +45,7 @@ class NavbarComp extends Component {
                     <MDBNavbarBrand href="/">
                         <img src={Logo} style={{width:"50px"}} alt="LOGO"/>
                     </MDBNavbarBrand>
-                    <MDBNavbarToggler onClick={ this.onClick } />
+                    <MDBNavbarToggler onClick={ this.toggleCollapse } />
                     <MDBCollapse isOpen = { this.state.collapse } navbar>
                         <MDBNavbarNav left >
                                 <MDBNavItem >
@@ -40,7 +55,19 @@ class NavbarComp extends Component {
                                     <MDBNavLink to="/news" style={{color:"white",fontFamily:"Arial"}}>News</MDBNavLink>
                                 </MDBNavItem>
                                 <MDBNavItem>
-                                    <MDBNavLink to="/gallery" style={{color:"white",fontFamily:"Arial"}}>Gallery</MDBNavLink>
+                                    <MDBDropdown>
+                                        <MDBDropdownToggle nav>
+                                            <div className="d-none d-md-inline"><b>Gallery</b></div>
+                                        </MDBDropdownToggle>
+                                        <MDBDropdownMenu className="dropdown-default">
+                                            <MDBDropdownItem>
+                                            <MDBNavLink to="/gallery/photo" style={{color:"black",fontFamily:"Arial"}}>Photo</MDBNavLink>
+                                            </MDBDropdownItem>
+                                            <MDBDropdownItem>
+                                            <MDBNavLink to="/gallery/video" style={{color:"black",fontFamily:"Arial"}}>Video</MDBNavLink>
+                                            </MDBDropdownItem>
+                                        </MDBDropdownMenu>
+                                    </MDBDropdown>
                                 </MDBNavItem>
                                 <MDBNavItem>
                                     <MDBNavLink to="/profile" style={{color:"white",fontFamily:"Arial"}}>Profile</MDBNavLink>
@@ -61,7 +88,40 @@ class NavbarComp extends Component {
                                         <MDBNavLink style={{color:"white"}}>{this.props.userObj.role}</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink  style={{color:"white"}} onClick={this.onBtnLogout}>Logout</MDBNavLink>
+                                    <MDBDropdown>
+                                        <MDBDropdownToggle nav>
+                                            <div className="d-none d-md-inline"><b>Options</b></div>
+                                        </MDBDropdownToggle>
+                                        <MDBDropdownMenu className="dropdown-default">
+                                            {
+                                                this.props.userObj.role == 'admin'
+                                                ?
+                                                <>
+                                                    <MDBDropdownItem>
+                                                        <MDBNavLink to="/admin/dashboard" style={{color:"black",fontFamily:"Arial"}}>Dashboard Admin</MDBNavLink>
+                                                    </MDBDropdownItem>
+                                                    <MDBDropdownItem>
+                                                        <MDBNavLink style={{color:"black",fontFamily:"Arial"}} onClick={this.onBtnLogout}>Logout</MDBNavLink>
+                                                    </MDBDropdownItem>
+                                                </>
+                                                :
+                                                <>
+                                                    <MDBDropdownItem>
+                                                        <MDBNavLink to="" style={{color:"black",fontFamily:"Arial"}}>Cart</MDBNavLink>
+                                                    </MDBDropdownItem>
+                                                    <MDBDropdownItem>
+                                                        <MDBNavLink to="" style={{color:"black",fontFamily:"Arial"}}>History</MDBNavLink>
+                                                    </MDBDropdownItem>
+                                                    <MDBDropdownItem divider/> 
+                                                    <MDBDropdownItem>
+                                                        <MDBNavLink style={{color:"black",fontFamily:"Arial"}} onClick={this.onBtnLogout}>Logout</MDBNavLink>
+                                                    </MDBDropdownItem>
+                                                </>
+                                            }
+                                           
+                                        </MDBDropdownMenu>
+                                    </MDBDropdown>
+                                      
                                     </MDBNavItem>
                                     
                                 </>

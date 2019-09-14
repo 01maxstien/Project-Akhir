@@ -13,7 +13,8 @@ import AdminDashBoard from './1.pages/Admin/AdminDashboard';
 import ProductDetails from './1.pages/ProductDetails/ProductDetails';
 import Cart from './1.pages/Cart/Cart'
 import News from './1.pages/News/News'
-import Gallery from './1.pages/Gallery/Gallery'
+import Gallery from './1.pages/Gallery/Photo'
+import Video from './1.pages/Gallery/Video'
 
 
 let cookieObj = new Cookie()
@@ -38,7 +39,8 @@ class App extends Component {
           <Route component={Cart} path='/cart' exact />
           <Route component={Auth} path='/auth' exact />
           <Route component={News} path='/news' exact />
-          <Route component={Gallery} path='/gallery' exact />
+          <Route component={Gallery} path='/gallery/photo' exact />
+          <Route component={Video} path='/gallery/video' exact />
         </Switch>
         <Footer/>
       </div>

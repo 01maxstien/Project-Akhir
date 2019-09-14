@@ -1,22 +1,22 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import Lightbox from "react-image-lightbox";
-import "./GalFoto.css";
+import "./Gallery.css";
 
-class Foto extends React.Component {
+class LightboxPage extends React.Component {
 state = {
   photoIndex: 0,
   isOpen: false,
   images: [
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(145).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(150).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(152).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(42).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(151).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(40).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(148).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(147).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(149).jpg'
+    'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(117).jpg',
+    'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(98).jpg',
+    'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(131).jpg',
+    'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(123).jpg',
+    'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(118).jpg',
+    'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(128).jpg',
+    'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(132).jpg',
+    'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(115).jpg',
+    'https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(133).jpg'
   ]
 }
 
@@ -43,8 +43,8 @@ return images.map(imageSrc => {
 render() {
 const { photoIndex, isOpen, images } = this.state;
   return (
-      <MDBContainer className="mt-3 ml-3 mr-3">
-        <div className="mdb-lightbox">
+      <MDBContainer className="mt-5">
+        <div className="mdb-lightbox no-margin" style={{marginTop:"150px",marginBottom:"20px"}}>
           <MDBRow>
             {this.renderImages()}
           </MDBRow>
@@ -73,4 +73,4 @@ const { photoIndex, isOpen, images } = this.state;
   }
 }
 
-export default Foto;
+export default LightboxPage;
