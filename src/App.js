@@ -15,6 +15,8 @@ import Cart from './1.pages/Cart/Cart'
 import News from './1.pages/News/News'
 import Gallery from './1.pages/Gallery/Photo'
 import Video from './1.pages/Gallery/Video'
+import ProfileTim from './1.pages/Profile/Profile'
+import ProfilePlayer from './1.pages/Profile/player'
 
 
 let cookieObj = new Cookie()
@@ -41,6 +43,8 @@ class App extends Component {
           <Route component={News} path='/news' exact />
           <Route component={Gallery} path='/gallery/photo' exact />
           <Route component={Video} path='/gallery/video' exact />
+          <Route component={ProfileTim} path='/Profile/Tim' exact />
+          <Route component={ProfilePlayer} path='/Profile/Squad' exact />
         </Switch>
         <Footer/>
       </div>

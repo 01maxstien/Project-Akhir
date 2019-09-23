@@ -70,7 +70,19 @@ class NavbarComp extends Component {
                                     </MDBDropdown>
                                 </MDBNavItem>
                                 <MDBNavItem>
-                                    <MDBNavLink to="/profile" style={{color:"white",fontFamily:"Arial"}}>Profile</MDBNavLink>
+                                <MDBDropdown>
+                                        <MDBDropdownToggle nav>
+                                            <div className="d-none d-md-inline"><b>Profile</b></div>
+                                        </MDBDropdownToggle>
+                                        <MDBDropdownMenu className="dropdown-default">
+                                            <MDBDropdownItem>
+                                            <MDBNavLink to="/Profile/Tim" style={{color:"black",fontFamily:"Arial"}}>Tim</MDBNavLink>
+                                            </MDBDropdownItem>
+                                            <MDBDropdownItem>
+                                            <MDBNavLink to="/Profile/Squad" style={{color:"black",fontFamily:"Arial"}}>Squad</MDBNavLink>
+                                            </MDBDropdownItem>
+                                        </MDBDropdownMenu>
+                                    </MDBDropdown>
                                 </MDBNavItem>
                                 <MDBNavItem>
                                     <MDBNavLink to="/store" style={{color:"white",fontFamily:"Arial"}}>Store</MDBNavLink>

@@ -9,7 +9,10 @@ import { MDBContainer, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-
+import GalleryPhoto from "../Gallery/Photo"
+import News from "../News/News"
+import Swiper from "../swiper/swiper"
+import Profile from "../Profile/Profile"
 
 
     
@@ -17,19 +20,20 @@ import 'mdbreact/dist/css/mdb.css';
 class Home extends Component {
     render() {
         return (
-        <div style={{marginTop:"20px"}}>
-            <MDBView src={Background} >
-              <MDBMask overlay="black-light" className="flex-center flex-column text-white text-center">
-              <div className="banner-area" id="home">
-                <div className="containertext">
-                  <span className="text1">Welcome <br />To Our Website</span>
-                  <span className="text2"></span>
-                </div>
-              </div>
-              </MDBMask>
-            </MDBView>
-        </div> 
-        
+          <div>
+              <div style={{marginTop:"20px"}}>
+                <MDBView src={Background} >
+                  <MDBMask overlay="black-light" className="flex-center flex-column text-white text-center">
+                  <div className="banner-area" id="home">
+                    <div className="containertext">
+                      <span className="text1">Welcome <br />To Our Website</span>
+                      <span className="text2"></span>
+                    </div>
+                  </div>
+                  </MDBMask>
+                </MDBView>
+              </div> 
+          </div>
         );
     }
 }

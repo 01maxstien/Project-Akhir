@@ -88,16 +88,16 @@ const FooterPage = () => {
               <ul style={{display:"flex"}}>
               
                 <li className="list-unstyled text-left">
-                    <MDBBtn color="blue"> <MDBIcon fab icon="facebook" />  Facebook </MDBBtn>
+                    <MDBBtn color="transparent"> <MDBIcon fab icon="facebook" />  Facebook </MDBBtn>
                 </li>
                 <li className="list-unstyled text-left">
-                    <MDBBtn gradient="purple" > <MDBIcon fab icon="instagram" />  Instagram </MDBBtn>
+                    <MDBBtn gradient="transparent" > <MDBIcon fab icon="instagram" />  Instagram </MDBBtn>
                 </li>
                 <li className="list-unstyled text-left">
-                 < MDBBtn color="blue" > <MDBIcon fab icon="twitter" />  Twitter </MDBBtn>
+                 < MDBBtn color="trasparent" > <MDBIcon fab icon="twitter" />  Twitter </MDBBtn>
                 </li>
                 <li className="list-unstyled text-left">
-                 < MDBBtn color="red" > <MDBIcon fab icon="youtube" />  Youtube </MDBBtn>
+                 < MDBBtn color="transparent" > <MDBIcon fab icon="youtube" />  Youtube </MDBBtn>
                 </li>
               </ul>
             </MDBCol>
